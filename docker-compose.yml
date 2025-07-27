@@ -1,0 +1,15 @@
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    container_name: zookeeper-notification-service
+    ports:
+      - "2183:2181"
+
+  kafka:
+    image: wurstmeister/kafka:latest
+    container_name: kafka-notification-service
+    ports:
+      - "9094:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2183
