@@ -9,6 +9,7 @@ type Config struct {
 	KafkaTopic   string
 	MongoURI     string
 	MongoDB      string
+	RESENDAPIKEY string
 }
 
 func Load() Config {
@@ -17,6 +18,7 @@ func Load() Config {
 		KafkaTopic:   getenv("KAFKA_TOPIC", "notifications"),
 		MongoURI:     getenv("MONGO_URI", "mongodb://localhost:27017"),
 		MongoDB:      getenv("MONGO_DB", "notificationdb"),
+		RESENDAPIKEY: getenv("RESEND_API_KEY", "re_XGKwg7gZ_2tUeHfr4hBgdT59BAkH5v5J3"),
 	}
 }
 
